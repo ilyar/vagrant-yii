@@ -85,4 +85,7 @@ Vagrant.configure("2") do |config|
       }
     }
   end
+
+  # Set timezone
+  config.vm.provision :shell, :inline => "echo date.timezone = Etc/GMT > /etc/php5/apache2/conf.d/20-date.ini && service apache2 reload"
 end
